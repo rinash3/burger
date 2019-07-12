@@ -3,43 +3,48 @@
 <div class="row">
 		<div class="col-md-12">
 			<img src="/assets/img/burger.png" alt="burger" class="img-responsive center-block">
+      <br>
 		</div>
 
-<h1 class="text-center text-danger">Eat The Burger</h1>
+<h1 class="text-center">Eat The Burger</h1>
 
-<h2>Burgers ready to be eaten</h2>
-
-<ul>
-{{#each burgers}}
-			    {{#unless this.devoured}}
-			      <li>
-			        {{this.burger_name}}
-			      </li>
-            <button type="button" id ="eatbutton">Eat the Burger</button>
-			    {{/unless}}
-			  {{/each}}
-</ul>
-
-<h2>Burgers That Have Been Eaten!</h2>
-
-<ul>
-{{#each burgers}}
-			    {{#if this.devoured}}
-			      <li>
-			        {{this.burger_name}}
-
-			      </li>
-			    {{/if}}
-			  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
 <form class="create-form">
 
   <div class="form-group">
-    <label for="ca">Burger Name:</label>
     <input type="text" id="burger" name="name">
   </div>
-  <button type="submit">Add a Burger</button>
+  
+  <div class="button">
+  <button type="submit">Submit</button>
+  </div>
 </form>
+</div>
+<br>
+<p> add the burger you want to eat and click submit</p>
+ <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Burgers to Eat</h2>
+{{#each burgers}}
+			    {{#unless this.devoured}}
+			     {{this.id}}.
+			        {{this.burger_name}}
+            <button type="button" id ="eatbutton">Devour it!</button>
+            <br>
+            <br>
+			    {{/unless}}
+			  {{/each}}
+        
+</div>
+
+  <div class="col-md-6">
+    <h2 class="header">Burgers Eaten</h2>
+{{#each burgers}}
+			    {{#if this.devoured}}
+			      {{this.id}}.
+			        {{this.burger_name}}
+              <br>
+			    {{/if}}
+			  {{/each}}
+    
+</div>
 </div>
