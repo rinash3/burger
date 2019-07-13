@@ -13,10 +13,10 @@
   <div class="form-group">
     <input type="text" id="burger" name="name">
   </div>
-  
   <div class="button">
   <button type="submit">Submit</button>
   </div>
+
 </form>
 </div>
 <br>
@@ -24,27 +24,25 @@
  <div class="row">
     <div class="col-md-6">
       <h2 class="header">Burgers to Eat</h2>
-{{#each burgers}}
-			    {{#unless this.devoured}}
-			     {{this.id}}.
-			        {{this.burger_name}}
-            <button type="button" id ="eatbutton">Devour it!</button>
-            <br>
-            <br>
-			    {{/unless}}
-			  {{/each}}
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
         
 </div>
 
   <div class="col-md-6">
     <h2 class="header">Burgers Eaten</h2>
-{{#each burgers}}
-			    {{#if this.devoured}}
-			      {{this.id}}.
-			        {{this.burger_name}}
-              <br>
-			    {{/if}}
-			  {{/each}}
-    
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
+    {{/if}}
+  {{/each}}
+</ul>
 </div>
 </div>
