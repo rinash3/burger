@@ -42,7 +42,5 @@ $(function() {
     );
   });
 
-  if($(".devour-it").html()=="done"){
-    $(".devour-it").css("display","none");
-  }
+  
 });
